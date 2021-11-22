@@ -15,28 +15,20 @@
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <label for="ingredient"></label>
   <input type="text" id="ingredient">
   <button id="submit"></button>
 
-  <script>
-    document.getElementById(`submit`).addEventListener(`click`, event => {
-      event.preventDefault()
-      const ingredient = document.getElementById('ingredient').value
+  <button id="search">Find Movie</button>
 
-      axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&apiKey=537e785a5f5e4d618536a1641da530d3`)
-        .then(res => {
-          const food = res.data
-          console.log(food)
-        })
-    })
-  </script>
+  <div id="movie"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
   <script src="food.js"></script>
 </body>
 
 </html>
+

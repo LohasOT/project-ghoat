@@ -1,3 +1,4 @@
+
 document.getElementById(`submit`).addEventListener(`click`, event => {
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
@@ -7,4 +8,12 @@ document.getElementById(`submit`).addEventListener(`click`, event => {
       const food = res.data
       console.log(food)
     })
+
+document.getElementById('search').addEventListener('click', event => {
+  event.preventDefault()
+  axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
+  .then(res => {
+    const movie = res.data
+    console.log(movie)
+  })
 })
