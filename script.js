@@ -1,7 +1,6 @@
 document.getElementById('search').addEventListener('click', event => {
   event.preventDefault()
-  const title = document.getElementById('title').value
-  axios.get(`http://www.omdbapi.com/?apikey=39892eb2&t=${title}`)
+  axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
   .then(res => {
     const movie = res.data
     console.log(movie)
