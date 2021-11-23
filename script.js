@@ -9,21 +9,17 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
       console.log(food)
 
       let randomIndex = Math.floor(Math.random() * 10)
-      console.log(randomIndex)
 
       const currentElem = document.createElement('div')
       currentElem.innerHTML = `
         <h3>"${food.results[randomIndex].title}"</h3>
         <img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">
       `
-      console.log(currentElem)
+
       document.getElementById('recipe').append(currentElem)
     })
-})
 
-document.getElementById('search').addEventListener('click', event => {
-  event.preventDefault()
-  axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
+    axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
     .then(res => {
       const movie = res.data
       let title = movie.name
@@ -33,9 +29,7 @@ document.getElementById('search').addEventListener('click', event => {
         .then(resp => {
 
           const poster = resp.data
-          console.log(poster)
           picture = poster.Poster
-          console.log(picture)
           descript = poster.Plot
 
           const currentElem = document.createElement('div')
@@ -52,3 +46,4 @@ document.getElementById('search').addEventListener('click', event => {
         })
     })
 })
+
