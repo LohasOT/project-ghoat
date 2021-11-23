@@ -50,7 +50,5 @@ document.getElementById('search').addEventListener('click', event => {
           `
           document.getElementById('movie').append(currentElem)
         })
-
     })
-
 })
