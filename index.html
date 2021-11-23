@@ -4,26 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project GHOAT</title>
+  
   <link rel="stylesheet" href="reset.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Project GHOAT</title>
 </head>
 
 <body>
- 
   <nav>
     <ul>
       <li>
         <a href="#homepage"> Homepage </a>
-      </li>
-      <li>
-        <a href="#search-results"> Search Results </a>
       </li>
       <li>
         <a href="#my-favorites"> My Favorites </a>
@@ -32,27 +29,30 @@
       </li>
     </ul>
   </nav>
-  
-<div class="wrapper">
-  <input type="text" class="input" placeholder="What are you in the for?">
-  <div class="searchBtn"><i class="fas fa-search"></i></div>
-</div>
+  <main>
+    <div class="container textStyle">
+      <div class="row" style="position: relative;">
+        <div class="col">
+          <h1 class="center-align">Date Night</h1>
+          <h6 class="center-align">A recipe will display based on what you search. Included will be a randomized movie to watch.
+          </h6>
+        </div>
+      </div>
+    </div>
 
-  <!-- <p>
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title">
-  </p>
-  <button id="search">Find Movie</button>
-</form>
-<div id="movie"></div> -->
+    <div class="wrapper">
+      <input type="text" class="input" placeholder="What are you in the for?">
+      <div class="searchBtn"><i class="fas fa-search"></i></div>
+    </div>
+  </main>
 
-<footer class="page-footer">
-         <p>
-          Created So You Can Have A Perfect Date Night
-          <br>
-          © 2021 Copyright by: Garret Broadhead, Harrison Reich, Richard Austin Hall, Oliver Hoang, and Timothy Duran.
-          </p>
-</footer>
+  <footer class="page-footer">
+    <p>
+      Created So You Can Have A Perfect Date Night
+      <br>
+      © 2021 Copyright by: Garret Broadhead, Harrison Reich, Richard Austin Hall, Oliver Hoang, and Timothy Duran.
+    </p>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
