@@ -10,3 +10,5 @@ If you do not like the recipe or random movie presented, you can hit the randomi
 
 The about us page is a description of those involved in creating the project with a short bio about each member.
 
+- need pic of live site
+- need link to live site to use
