@@ -1,4 +1,4 @@
-document.getElementById(`submit`).addEventListener(`click`, event => {
+document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
@@ -6,5 +6,16 @@ document.getElementById(`submit`).addEventListener(`click`, event => {
     .then(res => {
       const food = res.data
       console.log(food)
+
+      let randomIndex = Math.floor(Math.random() * 10)
+      console.log(randomIndex)
+
+      const currentElem = document.createElement('div')
+      currentElem.innerHTML = `
+        <h3>"${food.results[randomIndex].title}"</h3>
+        <img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">
+      `
+      console.log(currentElem)
+      document.getElementById('recipe').append(currentElem)
     })
 })
