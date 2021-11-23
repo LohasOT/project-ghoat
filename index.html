@@ -17,6 +17,7 @@
 
 <body>
 
+<<<<<<< HEAD
 
 
 <div class="wrapper">
@@ -43,6 +44,53 @@
   <div id="movie"></div> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+=======
+<form>
+  
+  <p>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+  </p>
+  <button id="search">Find Movie</button>
+</form>
+<div id="movie"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+
+  document.getElementById('search').addEventListener('click', event => {
+    event.preventDefault()
+    const title = document.getElementById('title').value
+
+    axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${title}`)
+      .then(res => {
+        const movie = res.data
+        console.log(movie)
+
+        if (movie.Title) {
+          document.getElementById('movie').innerHTML = `
+            <h1>${movie.Title}</h1>
+            <h2>Directed by ${movie.Director}</h2>
+            <h3>Rotten Tomatoes: ${movie.Ratings[1].Value}</h3>
+            <img src="${movie.Poster}" alt="${movie.Title} Poster">
+            <h4>${movie.Plot}</h4>
+            `
+        } else {
+          document.getElementById('movie').innerHTML = `
+              <h3>No Movie Found</h3>
+            `
+        }
+
+        document.getElementById('title').value = ''
+      })
+      .catch(err => console.log(err))
+  })
+
+</script>
+
+>>>>>>> 0e13d2ba33fe6450c92b95dfab2a0389c8fca6cd
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
   <script src="food.js"></script>
