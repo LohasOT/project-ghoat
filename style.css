@@ -1,3 +1,9 @@
+
+.page-footer {
+  position: relative;
+  width: 100%;
+  background-color: black;
+
 /* Font Family Import */
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
@@ -68,4 +74,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 18px;
+}
+.page-footer {
+  position: relative;
+  width: 100%;
+  background-color: black;
 }
