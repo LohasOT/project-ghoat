@@ -1,14 +1,25 @@
 
-// document.getElementById(`submit`).addEventListener(`click`, event => {
-//   event.preventDefault()
-//   const ingredient = document.getElementById('ingredient').value
+document.getElementById(`searchBtn`).addEventListener(`click`, event => {
+  event.preventDefault()
+  const ingredient = document.getElementById('ingredient').value
 
-//   axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&apiKey=537e785a5f5e4d618536a1641da530d3`)
-//     .then(res => {
-//       const food = res.data
-//       console.log(food)
-//     })
-// })
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&apiKey=537e785a5f5e4d618536a1641da530d3`)
+    .then(res => {
+      const food = res.data
+      console.log(food)
+
+      let randomIndex = Math.floor(Math.random() * 10)
+      console.log(randomIndex)
+
+      const currentElem = document.createElement('div')
+      currentElem.innerHTML = `
+        <h3>"${food.results[randomIndex].title}"</h3>
+        <img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">
+      `
+      console.log(currentElem)
+      document.getElementById('recipe').append(currentElem)
+    })
+})
 
 document.getElementById('search').addEventListener('click', event => {
   event.preventDefault()
@@ -20,7 +31,7 @@ document.getElementById('search').addEventListener('click', event => {
 
       axios.get(`http://www.omdbapi.com/?t=${title}&apikey=39892eb2`)
         .then(resp => {
-          
+
           const poster = resp.data
           console.log(poster)
           picture = poster.Poster
@@ -36,7 +47,6 @@ document.getElementById('search').addEventListener('click', event => {
             <h3>Genre: ${movie.genre}
             <h3>Rating: ${movie.imdbRating}
             <h3>Summary: ${descript}</h3>
-
           `
           document.getElementById('movie').append(currentElem)
         })
