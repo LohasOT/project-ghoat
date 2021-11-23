@@ -30,11 +30,13 @@ document.getElementById('search').addEventListener('click', event => {
           const currentElem = document.createElement('div')
           currentElem.innerHTML = `
 
-          <div>
             <h1>${title}</h1>
-            <h3>Summary: ${descript}</h3>
             <img src="${picture}" alt="${title} Poster">
-          </div>
+            <h3>Release Date: ${movie.releaseYear}
+            <h3>Genre: ${movie.genre}
+            <h3>Rating: ${movie.imdbRating}
+            <h3>Summary: ${descript}</h3>
+
           `
           document.getElementById('movie').append(currentElem)
         })
