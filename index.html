@@ -16,18 +16,36 @@
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li>
+        <a href="#homepage"> Homepage </a>
+      </li>
+      <li>
+        <a href="#search-results"> Search Results </a>
+      </li>
+      <li>
+        <a href="#my-favorites"> My Favorites </a>
+      </li>
+      <li> <a href="#about-us"> About Us </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="textStyle">
+    <h1>Lorem ipsum dolor sit amet</h1>
+  </header>
 
 
-<header class="textStyle">
-  <h1>Lorem ipsum dolor sit amet</h1>
-</header>
+  <div class="wrapper">
+    <input type="text" class="input" placeholder="What are you in the for?">
+    <div class="searchBtn"><i class="fas fa-search"></i></div>
+  </div>
 
-<div class="wrapper">
-  <input type="text" class="input" placeholder="What are you in the for?">
-  <div class="searchBtn"><i class="fas fa-search"></i></div>
-</div>
-
-<div class="textStyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aperiam aliquid! Dolores corrupti amet voluptate illo tempore, odio dignissimos laborum et beatae autem voluptas cum, quaerat at? Omnis, eaque numquam!</div>
+  <div class="textStyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aperiam aliquid!
+    Dolores corrupti amet voluptate illo tempore, odio dignissimos laborum et beatae autem voluptas cum, quaerat at?
+    Omnis, eaque numquam!
+  </div>
 
 
 
@@ -41,11 +59,19 @@
   <input type="text" id="ingredient">
   <button id="submit"></button>
 
-  <button id="search">Find Movie</button>
+=======
 
-  <div id="movie"></div> -->
+  <p>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+  </p>
+  <button id="search">Find Movie</button>
+</form>
+<div id="movie"></div> -->
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
   <script src="food.js"></script>
