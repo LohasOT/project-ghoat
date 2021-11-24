@@ -47,16 +47,20 @@
       <input id="ingredient" type="text" class="input" placeholder="What are you in the for?">
       <div class="searchBtn" id="searchBtn"><i class="fas fa-search"></i></div>
     </div>
-    <div id="movie"></div>
-    <div id="recipe"></div>
+    <!-- <div id="movie"></div>
+    <div id="recipe"></div> -->
 
 <!-- Results Page containers -->
     <section>
-      <div class="container hide">
-        <div class="row">
+      <div id="movieCard" class="container hide">
+        <div id= "smolCard" class="row">
           <div class="col s4">
             <div class="card medium">
-              <div class="card-content">
+                 <div class="card-image">
+                <img src="https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png%22%3E">
+                <span class="card-title">Card Title</span>
+                    </div>
+              <div class="card-content" id="movie">
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
                   require little markup to use effectively.</p>
               </div>
@@ -75,10 +79,11 @@
           </div>
           <div class="col s4">
             <div class="card medium">
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require
-                  little markup to use effectively.</p>
+                <div id="moviePoster" class="card-image">
+                </div>
+                <span id="movieTitle" class="card-title">
+                </span>
+              <div id="movieContent" class="card-content">
               </div>
               <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
