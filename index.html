@@ -4,15 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project GHOAT</title>
+  
   <link rel="stylesheet" href="reset.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Project GHOAT</title>
 </head>
 
 <body>
@@ -42,51 +43,72 @@
           <h5 class="white-text">Created So You Can Have A Perfect Date Night</h5>
         </div>
       </div>
-     </div>
-    <div class="footer-copyright">
-      <div class="footer-container">
-         © 2021 Copyright by: Garret Broadhead, Harrison Reich, Richard Austin Hall, Oliver Hoang, and Timothy Duran.
-      </div>
+    </header>
+
+<!-- Search Box -->
+    <div class="wrapper">
+      <input id="ingredient" type="text" class="input" placeholder="What are you in the for?">
+      <div class="searchBtn" id="searchBtn"><i class="fas fa-search"></i></div>
     </div>
+    <div id="movie"></div>
+    <div id="recipe"></div>
+
+<!-- Results Page containers -->
+    <section>
+      <div class="container hide">
+        <div class="row">
+          <div class="col s4">
+            <div class="card medium">
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                  require little markup to use effectively.</p>
+              </div>
+              <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab"><a href="#test4">Test 1</a></li>
+                  <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+                </ul>
+              </div>
+            </div>
+            <button class="center-align">New Recipe</button>
+          </div>
+          <div class="col s4 center-align combo">
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <button> Save Combo</button>
+          </div>
+          <div class="col s4">
+            <div class="card medium">
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                  require
+                  little markup to use effectively.</p>
+              </div>
+              <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab"><a href="#test4">Test 1</a></li>
+                  <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+                </ul>
+              </div>
+            </div>
+            <button class="right-align">New Movie</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer bar -->
+  <footer class="page-footer">
+    <p>
+      Created So You Can Have A Perfect Date Night
+      <br>
+      © 2021 Copyright by: Garret Broadhead, Harrison Reich, Richard Austin Hall, Oliver Hoang, and Timothy Duran.
+    </p>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-<script>
-
-  document.getElementById('search').addEventListener('click', event => {
-    event.preventDefault()
-    const title = document.getElementById('title').value
-
-    axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${title}`)
-      .then(res => {
-        const movie = res.data
-        console.log(movie)
-
-        if (movie.Title) {
-          document.getElementById('movie').innerHTML = `
-            <h1>${movie.Title}</h1>
-            <h2>Directed by ${movie.Director}</h2>
-            <h3>Rotten Tomatoes: ${movie.Ratings[1].Value}</h3>
-            <img src="${movie.Poster}" alt="${movie.Title} Poster">
-            <h4>${movie.Plot}</h4>
-            `
-        } else {
-          document.getElementById('movie').innerHTML = `
-              <h3>No Movie Found</h3>
-            `
-        }
-
-        document.getElementById('title').value = ''
-      })
-      .catch(err => console.log(err))
-  })
-
-</script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
-  <script src="food.js"></script>
 </body>
 
 </html>
