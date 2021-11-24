@@ -1,22 +1,28 @@
 
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
+  let cardDiv = document.getElementById("movieCard");
+  cardDiv.classList.remove("hide");
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
-  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&apiKey=537e785a5f5e4d618536a1641da530d3`)
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
     .then(res => {
       const food = res.data
       console.log(food)
 
       let randomIndex = Math.floor(Math.random() * 10)
+      let steps = food.results[randomIndex].anaylzedInstructions[0].steps
+      // need to make a forloop for steps and ingredients ^
 
       const currentElem = document.createElement('div')
       currentElem.innerHTML = `
         <h3>"${food.results[randomIndex].title}"</h3>
         <img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">
+        <p>"${steps[0]}"</p>
+        
       `
 
-      document.getElementById('recipe').append(currentElem)
+      // document.getElementById('recipe').append(currentElem)
     })
 
     axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
@@ -32,17 +38,25 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
           picture = poster.Poster
           descript = poster.Plot
 
-          const currentElem = document.createElement('div')
-          currentElem.innerHTML = `
+          const moviepic = document.getElementById('moviePoster')
 
-            <h1>${title}</h1>
-            <img src="${picture}" alt="${title} Poster">
-            <h3>Release Date: ${movie.releaseYear}
-            <h3>Genre: ${movie.genre}
-            <h3>Rating: ${movie.imdbRating}
-            <h3>Summary: ${descript}</h3>
+          moviepic.innerHTML = `<img src="${picture}">`
+
+          const movieName = document.getElementById('movieTitle')
+
+          movieName.innerHTML = `
+            <p>${title}</p>
           `
-          document.getElementById('movie').append(currentElem)
+          const movieContent = document.getElementById('movieContent')
+
+          movieContent.innerHTML = `
+              <p>Release Date: ${movie.releaseYear}</p>
+              <p>Genre: ${movie.genre}</p>
+              <p>Rating: ${movie.imdbRating}</p>
+              <p>Summary: ${descript}</p>
+          
+          `
+
         })
     })
 })
