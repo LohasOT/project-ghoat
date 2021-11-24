@@ -8,6 +8,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       let randomIndex = Math.floor(Math.random() * 10)
       let steps = food.results[randomIndex].analyzedInstructions[0].steps
+      let ingredients = food.results[randomIndex].extendedIngredients
 
       const currentElem = document.createElement('div')
       currentElem.innerHTML = `
@@ -17,10 +18,19 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
       for (let i = 0; i < steps.length; i++) {
         const stepElem = document.createElement('li')
         stepElem.innerHTML = `
-        <li>"${steps[i].step}"</li>
+        "${steps[i].step}"
         `
         currentElem.append(stepElem)
       }
+
+      for (let e = 0; e < ingredients.length; e++) {
+        const ingredientsElem = document.createElement('li')
+        ingredientsElem.innerHTML = `
+        "${ingredients[e].original}"
+        `
+        console.log(ingredientsElem)
+      }
+
       document.getElementById('recipe').append(currentElem)
     })
 })
