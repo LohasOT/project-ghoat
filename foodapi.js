@@ -1,4 +1,3 @@
-// gives pic, food item, and food name
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
@@ -18,5 +17,3 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       document.getElementById('recipe').append(currentElem)
     })
-
-    // gives pic, food item, food name, and recipe
