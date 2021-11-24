@@ -102,4 +102,10 @@ p {
   text-align: center;
 }
 
+.hide {
+  display: none;
+}
 
+.combo {
+  justify-content: space-between;
+}
