@@ -5,7 +5,6 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
     .then(res => {
       const food = res.data
-      console.log(food)
 
       let randomIndex = Math.floor(Math.random() * 10)
       let steps = food.results[randomIndex].analyzedInstructions[0].steps
@@ -14,12 +13,14 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
       currentElem.innerHTML = `
         <h3>"${food.results[randomIndex].title}"</h3>
         <img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">
-        <p>"${steps[0].step}"</p>
-        <p>"${steps[1].step}"</p>
-        <p>"${steps[2].step}"</p>
-        <p>"${steps[3].step}"</p>
-        <p>"${steps[4].step}"</p>
       `
+      for (let i = 0; i < steps.length; i++) {
+        const stepElem = document.createElement('li')
+        stepElem.innerHTML = `
+        <li>"${steps[i].step}"</li>
+        `
+        currentElem.append(stepElem)
+      }
       document.getElementById('recipe').append(currentElem)
     })
 })
