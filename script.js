@@ -25,7 +25,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
       let title = movie.name
       console.log(movie)
 
-      axios.get(`http://www.omdbapi.com/?t=${title}&apikey=39892eb2`)
+      axios.get(`https://www.omdbapi.com/?t=${title}&apikey=39892eb2`)
         .then(resp => {
 
           const poster = resp.data
