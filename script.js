@@ -17,10 +17,10 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       foodPic.innerHTML = `<img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">`
       
-      const foodName = document.getElementById('foodName')
-
-      foodName.innerHTML = `
-            <p>${food.results[randomIndex].title}</p>
+      // let foodName = document.getElementById('foodName')
+      // console.log(foodName)
+      document.getElementById('foodTitle').innerHTML = `
+            ${food.results[randomIndex].title}
           `
 
       for (let i = 0; i < steps.length; i++) {
