@@ -12,10 +12,16 @@
 
 /* Body Image - Cover All */
 body {
+  display: flex;
+  flex-direction: column;
   background: url('https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 /* Search Box  */
@@ -68,5 +74,39 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 18px;
+}
+
+
+/* Text Styling */
+.textStyle {
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3px;
+  background-color: rgb(85, 83, 83);
+}
+
+p {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.combo {
+  justify-content: space-between;
 }
 
