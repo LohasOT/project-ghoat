@@ -1,3 +1,4 @@
+
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
@@ -17,8 +18,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       foodPic.innerHTML = `<img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">`
       
-      // let foodName = document.getElementById('foodName')
-      // console.log(foodName)
+
       document.getElementById('foodTitle').innerHTML = `
             ${food.results[randomIndex].title}
           `
@@ -72,7 +72,37 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
               <p>Summary: ${descript}</p>
           
           `
-
         })
     })
 })
+
+document.getElementById('saveCombo').addEventListener('click', event => {
+
+  event.preventDefault()
+
+  let generatedMovie = document.getElementById('movieCard').value
+
+  let myStoredMovie = JSON.parse(localStorage.getItem('myMovie')) || []
+
+  //grabbing our array from localStorage, setting it to the variable myStoredStuff. IF this array does not exist then we set it to an empty array. Also we make sure to JSON.parse it so that we can get a real array, not a fake 'string array'.
+
+
+  myStoredMovie.push(generatedMovie)
+  //taking our value of the input, and pushing it to the array that we pulled down. This is just adding our stuff into our myStoredStuff
+
+
+  localStorage.setItem('myMovie', JSON.stringify(myStoredMovie))
+  //now we are taking the array that we pulled down, changed, and send it back to localStorage as myStuff. 
+
+
+  //here we are looping through the array that we pulled down and added an item to. 
+  for (let i = 0; i < myStoredMovie.length; i++) {
+    let box = document.getElementById('box')
+    box.innerHTML += `
+  <li> ${myStoredMovie[i]} </li>
+`
+
+    window.location.href = "saved.html"
+  }
+})
+
