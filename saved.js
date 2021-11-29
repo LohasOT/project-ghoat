@@ -8,7 +8,7 @@ for (let i = 0; i < myStoredMovie.length; i++) {
   let movieCard = document.getElementById('movieCard')
   movieCard.innerHTML += `
 
-      <div class="col s12 m6">
+      <div class="col s6">
         <div class="card">
           <div class="card-image">
             <img src="${myStoredPoster[i].Poster}">
