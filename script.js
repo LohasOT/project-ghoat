@@ -1,11 +1,5 @@
-
-function visitPage(){
-  window.location.href = "saved.html";
-  }
-
-
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
-  visitPage
+
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
   event.preventDefault()
@@ -75,7 +69,6 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
               <p>Release Date: ${movie.releaseYear}</p>
               <p>Genre: ${movie.genre}</p>
               <p>Rating: ${movie.imdbRating}</p>
-              <p>Summary: ${descript}</p>
           
           `
         })
@@ -102,13 +95,13 @@ document.getElementById('saveCombo').addEventListener('click', event => {
 
 
   //here we are looping through the array that we pulled down and added an item to. 
-  for (let i = 0; i < myStoredMovie.length; i++) {
-    let box = document.getElementById('box')
-    box.innerHTML += `
-  <li> ${myStoredMovie[i]} </li>
-`
+//   for (let i = 0; i < myStoredMovie.length; i++) {
+//     let box = document.getElementById('box')
+//     box.innerHTML += `
+//   <li> ${myStoredMovie[i]} </li>
+// `
 
-    window.location.href = "saved.html"
-  }
+//     window.location.href = "saved.html"
+//   }
 })
 
