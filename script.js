@@ -1,5 +1,11 @@
 
+function visitPage(){
+  window.location.href = "saved.html";
+  }
+
+
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
+  visitPage
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
   event.preventDefault()
