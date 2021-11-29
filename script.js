@@ -79,6 +79,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 document.getElementById('saveCombo').addEventListener('click', event => {
 
   event.preventDefault()
+
   let generatedMovie = document.getElementById('movieCard').value
 
   let myStoredMovie = JSON.parse(localStorage.getItem('myMovie')) || []
@@ -104,3 +105,4 @@ document.getElementById('saveCombo').addEventListener('click', event => {
     window.location.href = "saved.html"
   }
 })
+
