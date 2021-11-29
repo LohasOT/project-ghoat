@@ -1,5 +1,7 @@
+let movie
+let poster
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
-
+  
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
   event.preventDefault()
@@ -43,14 +45,14 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
     })
   axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
     .then(res => {
-      const movie = res.data
+      movie = res.data
       let title = movie.name
       console.log(movie)
 
       axios.get(`https://www.omdbapi.com/?t=${title}&apikey=39892eb2`)
         .then(resp => {
 
-          const poster = resp.data
+          poster = resp.data
           picture = poster.Poster
           descript = poster.Plot
 
@@ -78,30 +80,15 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 document.getElementById('saveCombo').addEventListener('click', event => {
 
   event.preventDefault()
-
-  let generatedMovie = document.getElementById('movieCard').value
-
+  let myStoredPoster = JSON.parse(localStorage.getItem('myPoster')) || []
   let myStoredMovie = JSON.parse(localStorage.getItem('myMovie')) || []
 
-  //grabbing our array from localStorage, setting it to the variable myStoredStuff. IF this array does not exist then we set it to an empty array. Also we make sure to JSON.parse it so that we can get a real array, not a fake 'string array'.
-
-
-  myStoredMovie.push(generatedMovie)
-  //taking our value of the input, and pushing it to the array that we pulled down. This is just adding our stuff into our myStoredStuff
-
+  myStoredMovie.push(movie)
+  myStoredPoster.push(poster)
 
   localStorage.setItem('myMovie', JSON.stringify(myStoredMovie))
-  //now we are taking the array that we pulled down, changed, and send it back to localStorage as myStuff. 
-
-
-  //here we are looping through the array that we pulled down and added an item to. 
-//   for (let i = 0; i < myStoredMovie.length; i++) {
-//     let box = document.getElementById('box')
-//     box.innerHTML += `
-//   <li> ${myStoredMovie[i]} </li>
-// `
-
-//     window.location.href = "saved.html"
-//   }
+  localStorage.setItem('myPoster',JSON.stringify(myStoredPoster))
+  window.location.href = "myResults.html"
+  
 })
 
