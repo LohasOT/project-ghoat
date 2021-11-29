@@ -1,5 +1,5 @@
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
-
+  
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
   event.preventDefault()
@@ -101,7 +101,7 @@ document.getElementById('saveCombo').addEventListener('click', event => {
 //   <li> ${myStoredMovie[i]} </li>
 // `
 
-//     window.location.href = "saved.html"
+//     window.location.href = "myResults.html"
 //   }
 })
 
