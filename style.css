@@ -20,9 +20,6 @@ body {
   min-height: 100vh;
 }
 
-main {
-  flex: 1 0 auto;
-}
 
 /* Search Box  */
 .wrapper {
