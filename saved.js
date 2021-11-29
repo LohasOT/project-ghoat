@@ -11,7 +11,7 @@ for (let i = 0; i < myStoredMovie.length; i++) {
       <div class="col s6">
         <div class="card">
           <div class="card-image">
-            <img src="${myStoredPoster[i].Poster}">
+            <img style= "height: 50vh;" src="${myStoredPoster[i].Poster}">
             </div>
             <span class="card-title">${myStoredMovie[i].name}</span>
         <div class="card-content">
@@ -22,4 +22,21 @@ for (let i = 0; i < myStoredMovie.length; i++) {
       </div>
     </div>
 `
+}
+let myStoredFood = JSON.parse(localStorage.getItem('myFood')) || []
+  
+console.log(myStoredFood)
+
+for (let i = 0; i < myStoredFood.length; i++) {
+  let foodCard = document.getElementById('foodCard')
+  foodCard.innerHTML += `
+        <div class="col s6">
+        <div class="card">
+          <div class="card-image">
+            <img style= "height: 50vh;" src="${myStoredFood[i].poster}">
+            </div>
+            <span class="card-title">${myStoredFood[i].title}</span>
+      </div>
+    </div>
+    `
 }
