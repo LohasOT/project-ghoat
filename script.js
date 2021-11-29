@@ -1,45 +1,46 @@
+
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
-//   let cardDiv = document.getElementById("card");
-//   cardDiv.classList.remove("hide");
-//   event.preventDefault()
-//   const ingredient = document.getElementById('ingredient').value
+  let cardDiv = document.getElementById("card");
+  cardDiv.classList.remove("hide");
+  event.preventDefault()
+  const ingredient = document.getElementById('ingredient').value
 
-//   axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
-//     .then(res => {
-//       const food = res.data
-//       console.log (food)
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
+    .then(res => {
+      const food = res.data
+      console.log (food)
 
-//       let randomIndex = Math.floor(Math.random() * 10)
-//       let steps = food.results[randomIndex].analyzedInstructions[0].steps
-//       let ingredients = food.results[randomIndex].extendedIngredients
+      let randomIndex = Math.floor(Math.random() * 10)
+      let steps = food.results[randomIndex].analyzedInstructions[0].steps
+      let ingredients = food.results[randomIndex].extendedIngredients
 
-//       const foodPic = document.getElementById('foodPoster')
+      const foodPic = document.getElementById('foodPoster')
 
-//       foodPic.innerHTML = `<img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">`
+      foodPic.innerHTML = `<img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">`
       
 
-//       document.getElementById('foodTitle').innerHTML = `
-//             ${food.results[randomIndex].title}
-//           `
+      document.getElementById('foodTitle').innerHTML = `
+            ${food.results[randomIndex].title}
+          `
 
-//       for (let i = 0; i < steps.length; i++) {
-//         const stepElem = document.createElement('li')
-//         stepElem.innerHTML = `
-//         "${steps[i].step}"
-//         `
-//         currentElem.append(stepElem)
-//       }
+      for (let i = 0; i < steps.length; i++) {
+        const stepElem = document.createElement('li')
+        stepElem.innerHTML = `
+        "${steps[i].step}"
+        `
+        currentElem.append(stepElem)
+      }
 
-//       for (let e = 0; e < ingredients.length; e++) {
-//         const ingredientsElem = document.createElement('li')
-//         ingredientsElem.innerHTML = `
-//         "${ingredients[e].original}"
-//         `
-//         console.log(ingredientsElem)
-//       }
+      for (let e = 0; e < ingredients.length; e++) {
+        const ingredientsElem = document.createElement('li')
+        ingredientsElem.innerHTML = `
+        "${ingredients[e].original}"
+        `
+        console.log(ingredientsElem)
+      }
 
-//       // document.getElementById('recipe').append(currentElem)
-    // })
+      // document.getElementById('recipe').append(currentElem)
+    })
   axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
     .then(res => {
       const movie = res.data
@@ -99,5 +100,7 @@ document.getElementById('saveCombo').addEventListener('click', event => {
     box.innerHTML += `
   <li> ${myStoredMovie[i]} </li>
 `
+
+    window.location.href = "saved.html"
   }
 })
