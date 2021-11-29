@@ -1,5 +1,7 @@
 let movie
 let poster
+let food
+let foodObject
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   
   let cardDiv = document.getElementById("card");
@@ -7,9 +9,9 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
-  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=a2797ed38f0b4e37be5966e64fa2e6ad`)
     .then(res => {
-      const food = res.data
+      food = res.data
       console.log (food)
 
       let randomIndex = Math.floor(Math.random() * 10)
@@ -30,7 +32,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
         stepElem.innerHTML = `
         "${steps[i].step}"
         `
-        currentElem.append(stepElem)
+        // currentElem.append(stepElem)
       }
 
       for (let e = 0; e < ingredients.length; e++) {
@@ -40,7 +42,13 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
         `
         console.log(ingredientsElem)
       }
-
+      foodObject = {
+        title: food.results[randomIndex].title,
+        poster: food.results[randomIndex].image,
+        steps: steps,
+        ingredients: ingredients
+      }
+      console.log(foodObject)
       // document.getElementById('recipe').append(currentElem)
     })
   axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
@@ -82,12 +90,15 @@ document.getElementById('saveCombo').addEventListener('click', event => {
   event.preventDefault()
   let myStoredPoster = JSON.parse(localStorage.getItem('myPoster')) || []
   let myStoredMovie = JSON.parse(localStorage.getItem('myMovie')) || []
+  let myStoredFood = JSON.parse(localStorage.getItem('myFood')) || []
 
   myStoredMovie.push(movie)
   myStoredPoster.push(poster)
+  myStoredFood.push(foodObject)
 
   localStorage.setItem('myMovie', JSON.stringify(myStoredMovie))
   localStorage.setItem('myPoster',JSON.stringify(myStoredPoster))
+  localStorage.setItem('myFood',JSON.stringify(myStoredFood))
   window.location.href = "myResults.html"
   
 })
