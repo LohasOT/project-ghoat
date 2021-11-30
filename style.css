@@ -94,6 +94,7 @@ body {
   width: 100%;
   padding: 3px;
   background-color: rgb(85, 83, 83);
+  margin-top: auto;
 }
 
 p {
@@ -139,4 +140,19 @@ li {
 
 h4 {
   text-align: center;
+}
+
+#titleText {
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #titleText {
+    font-size: 20px;
+  }
+
+  body {
+    background-size: cover;
+  }
 }
