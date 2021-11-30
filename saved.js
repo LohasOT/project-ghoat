@@ -40,7 +40,7 @@ for (let i = 0; i < myStoredFood.length; i++) {
         <span class="card-title">${myStoredFood[i].title}</span>
         <ol></ol>
       </div>
-    </div>
+    </div> 
     `
   let steps = myStoredFood[i].steps;
   let foodSteps = document.getElementById('foodSteps');
