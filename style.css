@@ -53,6 +53,7 @@ body {
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+  border: solid white 1px;
 }
 
 /* Search Box Input Styling */
@@ -71,6 +72,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 18px;
+  color: white;
 }
 
 
@@ -88,7 +90,6 @@ body {
 }
 
 .page-footer {
-  /* position: absolute; */
   bottom: 0;
   width: 100%;
   padding: 3px;
@@ -103,14 +104,39 @@ p {
   display: none;
 }
 
-.combo {
-  justify-content: space-between;
+#saveCombo {
+  background-color: #008000;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border: solid white 1px;
+}
+
+#saveCombo:hover {
+  background: #38B000;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
 }
 
 main {
   flex: 1 0 auto;
 }
 
-#smolCard {
-  padding-top: 15vh;
+#card {
+  padding-top: 30vh;
+}
+
+h5 {
+  text-align: center;
+}
+
+li {
+  padding: 10px;
+}
+
+h4 {
+  text-align: center;
 }
