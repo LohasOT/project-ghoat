@@ -140,3 +140,18 @@ li {
 h4 {
   text-align: center;
 }
+
+#titleText {
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #titleText {
+    font-size: 20px;
+  }
+
+  body {
+    background-size: 150vh;
+  }
+}
