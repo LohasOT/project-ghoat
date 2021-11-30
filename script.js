@@ -9,7 +9,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
-  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=aaffdbcff53d43e4880583b9ee8cfee5`)
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
     .then(res => {
       food = res.data
       console.log(food)
@@ -24,7 +24,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
 
       document.getElementById('foodTitle').innerHTML = `
-            ${food.results[randomIndex].title}
+            <br>
+            <h4>${food.results[randomIndex].title}</h4>
           `
 
       for (let i = 0; i < steps.length; i++) {
@@ -71,7 +72,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
           const movieName = document.getElementById('movieTitle')
 
           movieName.innerHTML = `
-            <p>${title}</p>
+            <br>
+            <h5>${title}</h5>
           `
           const movieContent = document.getElementById('movieContent')
 
