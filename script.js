@@ -25,7 +25,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       document.getElementById('foodTitle').innerHTML = `
             <br>
-            <h4>${food.results[randomIndex].title}</h4>
+            <h5>${food.results[randomIndex].title}</h5>
           `
 
       for (let i = 0; i < steps.length; i++) {
