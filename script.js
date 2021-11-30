@@ -24,7 +24,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
 
       document.getElementById('foodTitle').innerHTML = `
-            ${food.results[randomIndex].title}
+            <br>
+            <h4>${food.results[randomIndex].title}</h4>
           `
 
       for (let i = 0; i < steps.length; i++) {
@@ -71,7 +72,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
           const movieName = document.getElementById('movieTitle')
 
           movieName.innerHTML = `
-            <p>${title}</p>
+            <br>
+            <h5>${title}</h5>
           `
           const movieContent = document.getElementById('movieContent')
 
