@@ -6,3 +6,41 @@ body {
   height: 100vh;
 }
 
+/* Font Family Import */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+}
+
+
+/* Search Box  */
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3px;
+  background-color: rgb(85, 83, 83);
+}
+
+p {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#smolCard {
+  padding-top: 15vh;
+}

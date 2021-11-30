@@ -125,6 +125,18 @@ main {
   flex: 1 0 auto;
 }
 
-#smolCard {
-  padding-top: 15vh;
+#card {
+  padding-top: 30vh;
+}
+
+h5 {
+  text-align: center;
+}
+
+li {
+  padding: 10px;
+}
+
+h4 {
+  text-align: center;
 }
