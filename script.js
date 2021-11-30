@@ -3,7 +3,7 @@ let poster
 let food
 let foodObject
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
-  
+
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
   event.preventDefault()
@@ -12,7 +12,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
   axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
     .then(res => {
       food = res.data
-      console.log (food)
+      console.log(food)
 
       let randomIndex = Math.floor(Math.random() * 10)
       let steps = food.results[randomIndex].analyzedInstructions[0].steps
@@ -20,9 +20,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       const foodPic = document.getElementById('foodPoster')
 
-      foodPic.innerHTML = `<img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">
-      `
-      
+      foodPic.innerHTML = `<img src="${food.results[randomIndex].image}" alt="${food.results[randomIndex].title}">`
+
 
       document.getElementById('foodTitle').innerHTML = `
             <br>
@@ -100,9 +99,9 @@ document.getElementById('saveCombo').addEventListener('click', event => {
   myStoredFood.push(foodObject)
 
   localStorage.setItem('myMovie', JSON.stringify(myStoredMovie))
-  localStorage.setItem('myPoster',JSON.stringify(myStoredPoster))
-  localStorage.setItem('myFood',JSON.stringify(myStoredFood))
+  localStorage.setItem('myPoster', JSON.stringify(myStoredPoster))
+  localStorage.setItem('myFood', JSON.stringify(myStoredFood))
   window.location.href = "myResults.html"
-  
+
 })
 
