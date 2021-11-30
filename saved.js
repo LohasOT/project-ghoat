@@ -8,10 +8,10 @@ for (let i = 0; i < myStoredMovie.length; i++) {
   let movieCard = document.getElementById('movieCard')
   movieCard.innerHTML += `
 
-      <div class="col s4">
+      <div class="col s6">
         <div class="card">
           <div class="card-image">
-            <img style= "height: 50vh;" src="${myStoredPoster[i].Poster}">
+            <img style= "height: 40vh;" src="${myStoredPoster[i].Poster}">
             </div>
             <span class="card-title"><h5>${myStoredMovie[i].name}</h5></span>
         <div class="card-content">
@@ -33,10 +33,10 @@ console.log(myStoredFood)
 for (let i = 0; i < myStoredFood.length; i++) {
   let foodCard = document.getElementById('foodCard')
   foodCard.innerHTML += `
-    <div class="col s4">
+    <div class="col s6">
       <div class="card">
         <div class="card-image">
-          <img style= "height: 50vh;" src="${myStoredFood[i].poster}">
+          <img style= "height: 40vh;" src="${myStoredFood[i].poster}">
         </div>
         <span class="card-title"><h5>${myStoredFood[i].title}</h5></span>
         <ol></ol>

@@ -72,7 +72,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
           const movieName = document.getElementById('movieTitle')
 
           movieName.innerHTML = `
-            <br>
+            
             <h5>${title}</h5>
           `
           const movieContent = document.getElementById('movieContent')
@@ -81,7 +81,6 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
               <p>Release Date: ${movie.releaseYear}</p>
               <p>Genre: ${movie.genre}</p>
               <p>Rating: ${movie.imdbRating}</p>
-          
           `
         })
     })
