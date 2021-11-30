@@ -24,19 +24,35 @@ for (let i = 0; i < myStoredMovie.length; i++) {
 `
 }
 let myStoredFood = JSON.parse(localStorage.getItem('myFood')) || []
-  
+
 console.log(myStoredFood)
+
+
 
 for (let i = 0; i < myStoredFood.length; i++) {
   let foodCard = document.getElementById('foodCard')
   foodCard.innerHTML += `
-        <div class="col s6">
-        <div class="card">
-          <div class="card-image">
-            <img style= "height: 50vh;" src="${myStoredFood[i].poster}">
-            </div>
-            <span class="card-title">${myStoredFood[i].title}</span>
+    <div class="col s6">
+      <div class="card">
+        <div class="card-image">
+          <img style= "height: 50vh;" src="${myStoredFood[i].poster}">
+        </div>
+        <span class="card-title">${myStoredFood[i].title}</span>
+        <ol></ol>
       </div>
     </div>
     `
+  let steps = myStoredFood[i].steps;
+  let foodSteps = document.getElementById('foodSteps');
+
+  for (let j = 0; j < steps.length; j++) {
+
+    let stepList = document.getElementById('foodCard').getElementsByTagName('ol')[i];
+
+    let step = document.createElement("li");
+    step.innerText = ` ${steps[j].step} `
+
+    stepList.append(step);
+  }
+
 }
