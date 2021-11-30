@@ -1,13 +1,17 @@
+let movie
+let poster
+let food
+let foodObject
 document.getElementById(`searchBtn`).addEventListener(`click`, event => {
-
+  
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
   event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
-  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=a2797ed38f0b4e37be5966e64fa2e6ad`)
     .then(res => {
-      const food = res.data
+      food = res.data
       console.log (food)
 
       let randomIndex = Math.floor(Math.random() * 10)
@@ -28,7 +32,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
         stepElem.innerHTML = `
         "${steps[i].step}"
         `
-        currentElem.append(stepElem)
+        // currentElem.append(stepElem)
       }
 
       for (let e = 0; e < ingredients.length; e++) {
@@ -38,19 +42,25 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
         `
         console.log(ingredientsElem)
       }
-
+      foodObject = {
+        title: food.results[randomIndex].title,
+        poster: food.results[randomIndex].image,
+        steps: steps,
+        ingredients: ingredients
+      }
+      console.log(foodObject)
       // document.getElementById('recipe').append(currentElem)
     })
   axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
     .then(res => {
-      const movie = res.data
+      movie = res.data
       let title = movie.name
       console.log(movie)
 
       axios.get(`https://www.omdbapi.com/?t=${title}&apikey=39892eb2`)
         .then(resp => {
 
-          const poster = resp.data
+          poster = resp.data
           picture = poster.Poster
           descript = poster.Plot
 
@@ -78,30 +88,18 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 document.getElementById('saveCombo').addEventListener('click', event => {
 
   event.preventDefault()
-
-  let generatedMovie = document.getElementById('movieCard').value
-
+  let myStoredPoster = JSON.parse(localStorage.getItem('myPoster')) || []
   let myStoredMovie = JSON.parse(localStorage.getItem('myMovie')) || []
+  let myStoredFood = JSON.parse(localStorage.getItem('myFood')) || []
 
-  //grabbing our array from localStorage, setting it to the variable myStoredStuff. IF this array does not exist then we set it to an empty array. Also we make sure to JSON.parse it so that we can get a real array, not a fake 'string array'.
-
-
-  myStoredMovie.push(generatedMovie)
-  //taking our value of the input, and pushing it to the array that we pulled down. This is just adding our stuff into our myStoredStuff
-
+  myStoredMovie.push(movie)
+  myStoredPoster.push(poster)
+  myStoredFood.push(foodObject)
 
   localStorage.setItem('myMovie', JSON.stringify(myStoredMovie))
-  //now we are taking the array that we pulled down, changed, and send it back to localStorage as myStuff. 
-
-
-  //here we are looping through the array that we pulled down and added an item to. 
-//   for (let i = 0; i < myStoredMovie.length; i++) {
-//     let box = document.getElementById('box')
-//     box.innerHTML += `
-//   <li> ${myStoredMovie[i]} </li>
-// `
-
-//     window.location.href = "saved.html"
-//   }
+  localStorage.setItem('myPoster',JSON.stringify(myStoredPoster))
+  localStorage.setItem('myFood',JSON.stringify(myStoredFood))
+  window.location.href = "myResults.html"
+  
 })
 

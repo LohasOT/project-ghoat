@@ -88,7 +88,7 @@ body {
 }
 
 .page-footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   padding: 3px;
@@ -107,3 +107,10 @@ p {
   justify-content: space-between;
 }
 
+main {
+  flex: 1 0 auto;
+}
+
+#smolCard {
+  padding-top: 15vh;
+}
