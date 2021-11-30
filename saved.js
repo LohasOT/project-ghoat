@@ -13,11 +13,12 @@ for (let i = 0; i < myStoredMovie.length; i++) {
           <div class="card-image">
             <img style= "height: 50vh;" src="${myStoredPoster[i].Poster}">
             </div>
-            <span class="card-title">${myStoredMovie[i].name}</span>
+            <span class="card-title"><h5>${myStoredMovie[i].name}</h5></span>
         <div class="card-content">
             <p>Release Date: ${myStoredMovie[i].releaseYear}</p>
             <p>Genre: ${myStoredMovie[i].genre}</p>
             <p>Rating: ${myStoredMovie[i].imdbRating}</p>
+            <p>Summary: ${myStoredMovie[i].Plot}</p>
         </div>
       </div>
     </div>
@@ -37,7 +38,7 @@ for (let i = 0; i < myStoredFood.length; i++) {
         <div class="card-image">
           <img style= "height: 50vh;" src="${myStoredFood[i].poster}">
         </div>
-        <span class="card-title">${myStoredFood[i].title}</span>
+        <span class="card-title"><h5>${myStoredFood[i].title}</h5></span>
         <ol></ol>
       </div>
     </div>
