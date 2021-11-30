@@ -18,14 +18,18 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 
+/* @media only screen and (max-width: 600px) {
+  .page-footer {}
+} */
 
 /* Search Box  */
 
 .page-footer {
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  height: 50px;
   width: 100%;
-  padding: 3px;
+  margin-top: 300px;
   background-color: rgb(85, 83, 83);
 }
 
