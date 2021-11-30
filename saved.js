@@ -8,7 +8,7 @@ for (let i = 0; i < myStoredMovie.length; i++) {
   let movieCard = document.getElementById('movieCard')
   movieCard.innerHTML += `
 
-      <div class="col s6">
+      <div class="col s4">
         <div class="card">
           <div class="card-image">
             <img style= "height: 50vh;" src="${myStoredPoster[i].Poster}">
@@ -33,7 +33,7 @@ console.log(myStoredFood)
 for (let i = 0; i < myStoredFood.length; i++) {
   let foodCard = document.getElementById('foodCard')
   foodCard.innerHTML += `
-    <div class="col s6">
+    <div class="col s4">
       <div class="card">
         <div class="card-image">
           <img style= "height: 50vh;" src="${myStoredFood[i].poster}">
