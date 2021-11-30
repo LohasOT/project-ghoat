@@ -15,23 +15,8 @@
 </head>
 
 <body>
-  
-<div class="wrapper">
-  <input type="text" class="input" placeholder="What are you in the for?">
-  <div class="searchBtn"><i class="fas fa-search"></i></div>
-</div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
-<form>
-  
-  <p>
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title">
-  </p>
-  <button id="search">Find Movie</button>
-</form>
-
-<div id="movie"></div>
+  <!-- Navigation bar -->
+  <nav>
     <div class="nav-wrapper">
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left">
@@ -40,7 +25,6 @@
         <li><a href="aboutUs.html">About Us</a></li>
       </ul>
     </div>
-
   </nav>
 
   <footer class="page-footer">
@@ -51,43 +35,38 @@
         </div>
       </div>
     </header>
-
+      <button id="saveCombo">Save Combo</button>
     <!-- Search Box -->
     <div class="wrapper">
       <input id="ingredient" type="text" class="input" placeholder="Main ingredient?">
       <div class="searchBtn" id="searchBtn"><i class="fas fa-search"></i></div>
     </div>
 
-<!-- Results Page containers -->
+    <!-- Results Page containers -->
     <section>
+      
       <div id="card" class="container hide">
-        <div id= "smolCard" class="row">
+        <div id="smolCard" class="row">
           <div class="col s4">
             <div class="card medium">
-                 <div id="foodPoster" class="card-image"></div>
+                <div id="foodPoster" class="card-image"></div>
                 <span id="foodTitle" class="card-title"></span>
               <div class="card-content" id="foodSum">
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
                   require little markup to use effectively.</p>
               </div>
-              <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                  <li class="tab"><a href="#test4">Test 1</a></li>
-                  <li class="tab"><a class="active" href="#test5">Test 2</a></li>
-                </ul>
-              </div>
             </div>
           </div>
           <div class="col s4 center-align combo">
             <br><br><br><br><br><br><br><br><br><br><br><br>
-            <button id="saveCombo">Save Combo</button>
+            <!-- <button id="saveCombo">Save Combo</button> -->
           </div>
           <div id="movieCard" class="col s4">
             <div class="card medium">
-                <div id="moviePoster" class="card-image">
-                </div>
-                <span id="movieTitle" class="card-title">
-                </span>
+              <div id="moviePoster" class="card-image">
+              </div>
+              <span id="movieTitle" class="card-title">
+              </span>
               <div id="movieContent" class="card-content">
               </div>
               <div class="card-tabs">
