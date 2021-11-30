@@ -18,7 +18,7 @@ for (let i = 0; i < myStoredMovie.length; i++) {
             <p>Release Date: ${myStoredMovie[i].releaseYear}</p>
             <p>Genre: ${myStoredMovie[i].genre}</p>
             <p>Rating: ${myStoredMovie[i].imdbRating}</p>
-            <p>Summary: ${myStoredMovie[i].Plot}</p>
+            <p>Summary: ${myStoredMovie[i].overview}</p>
         </div>
       </div>
     </div>
