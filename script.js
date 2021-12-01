@@ -2,19 +2,18 @@ let movie
 let poster
 let food
 let foodObject
+
 document.getElementById(`searchBtn`).addEventListener(`click`, getData)
 
 function getData() {
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
-  // event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
   axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
     .then(function(res){
-      console.log(res)
+
       food = res.data
-      console.log(food)
 
       let randomIndex = Math.floor(Math.random() * 10)
       let steps = food.results[randomIndex].analyzedInstructions[0].steps
@@ -36,7 +35,7 @@ function getData() {
         stepElem.innerHTML = `
         "${steps[i].step}"
         `
-        // currentElem.append(stepElem)
+
       }
 
       for (let e = 0; e < ingredients.length; e++) {
@@ -44,7 +43,7 @@ function getData() {
         ingredientsElem.innerHTML = `
         "${ingredients[e].original}"
         `
-        console.log(ingredientsElem)
+
       }
       foodObject = {
         title: food.results[randomIndex].title,
@@ -52,14 +51,13 @@ function getData() {
         steps: steps,
         ingredients: ingredients
       }
-      console.log(foodObject)
-      // document.getElementById('recipe').append(currentElem)
+
     })
   axios.get(`https://k2maan-moviehut.herokuapp.com/api/random`)
     .then(res => {
       movie = res.data
       let title = movie.name
-      console.log(movie)
+
 
       axios.get(`https://www.omdbapi.com/?t=${title}&apikey=39892eb2`)
         .then(resp => {

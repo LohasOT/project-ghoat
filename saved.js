@@ -1,8 +1,6 @@
 let myStoredPoster = JSON.parse(localStorage.getItem('myPoster')) || []
-console.log(myStoredPoster)
 
 let myStoredMovie = JSON.parse(localStorage.getItem('myMovie')) || []
-console.log(myStoredMovie)
 
 for (let i = 0; i < myStoredMovie.length; i++) {
   let movieCard = document.getElementById('movieCard')
@@ -25,10 +23,6 @@ for (let i = 0; i < myStoredMovie.length; i++) {
 `
 }
 let myStoredFood = JSON.parse(localStorage.getItem('myFood')) || []
-
-console.log(myStoredFood)
-
-
 
 for (let i = 0; i < myStoredFood.length; i++) {
   let foodCard = document.getElementById('foodCard')
