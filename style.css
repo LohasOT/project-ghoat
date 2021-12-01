@@ -146,6 +146,13 @@ h4 {
   font-size: 35px;
 }
 
+#scroll {
+overflow-y: scroll;
+}
+
+h3 {
+  text-align: center;
+}
 @media only screen and (max-width: 600px) {
 
   #titleText {

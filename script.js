@@ -25,7 +25,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
 
       document.getElementById('foodTitle').innerHTML = `
             <br>
-            <h5>${food.results[randomIndex].title}</h5>
+            <h4>${food.results[randomIndex].title}</h4>
+            <p>${food.results[randomIndex].summary}</p>
           `
 
       for (let i = 0; i < steps.length; i++) {
@@ -81,6 +82,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
               <p>Release Date: ${movie.releaseYear}</p>
               <p>Genre: ${movie.genre}</p>
               <p>Rating: ${movie.imdbRating}</p>
+              <br>
+              <p>Summary: ${descript}</p>
           `
         })
     })
