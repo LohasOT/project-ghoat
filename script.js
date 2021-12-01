@@ -18,7 +18,7 @@ function getData() {
   const ingredient = document.getElementById('ingredient').value
 
 // getting information from spoonacular API
-  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
+  axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=6b9d0e1539434e12ab8da9fd6d0a1184`)
     .then(function(res){
 
       food = res.data
