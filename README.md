@@ -1,6 +1,6 @@
 DATE NIGHT
 
-Date night is the name of our application that takes two api's; one being totally random (movie) and the other is based on user input for food recipes based on user entry (ingredient).
+Date night is the name of our application that takes three api's; some being totally random (movie) and the other is based on user input for food recipes based on user entry (ingredient).
 
 We built the app so that anyone can plan their date night of a random meal based on a main ingredient they own and a random movie to watch with the meal.
 
