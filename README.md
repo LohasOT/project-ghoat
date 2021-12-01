@@ -24,3 +24,6 @@ https://lohasot.github.io/project-ghoat/
 
 <img width="1440" alt="Screen Shot 2021-11-30 at 10 05 12 PM" src="https://user-images.githubusercontent.com/93016157/144180815-ed7b2f82-88bb-4c49-85c9-5bc75bf7c9cf.png">
 
+<img width="1440" alt="Screen Shot 2021-11-30 at 10 05 12 PM" src="https://user-images.githubusercontent.com/91640571/144193307-38757663-1df0-4ebf-a48a-d3ee6645f0eb.jpg">
+
+<img width="1440" alt="Screen Shot 2021-11-30 at 10 05 12 PM" src="https://user-images.githubusercontent.com/91640571/144193311-52130e79-c142-4cad-953e-07a6709def51.jpg">
