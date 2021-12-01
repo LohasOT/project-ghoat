@@ -12,8 +12,5 @@ You are able to view your saved pairing in the 'MY RESULTS' tab, which will show
 
 The about us page is a description of those involved in creating the project with a short bio about each member and a link to their socials.
 
-### Link To The Deployed Page
+<img width="1440" alt="Screen Shot 2021-11-30 at 10 05 12 PM" src="https://user-images.githubusercontent.com/93016157/144180815-ed7b2f82-88bb-4c49-85c9-5bc75bf7c9cf.png">
 
-- need pic of live site
-- need link to live site to use
-#

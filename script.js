@@ -2,15 +2,17 @@ let movie
 let poster
 let food
 let foodObject
-document.getElementById(`searchBtn`).addEventListener(`click`, event => {
+document.getElementById(`searchBtn`).addEventListener(`click`, getData)
 
+function getData() {
   let cardDiv = document.getElementById("card");
   cardDiv.classList.remove("hide");
-  event.preventDefault()
+  // event.preventDefault()
   const ingredient = document.getElementById('ingredient').value
 
   axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${ingredient}&addRecipeInformation=true&fillIngredients=true&instructionsRequired=true&apiKey=0ccd34341a57418f9bbc6d88b80a81e2`)
-    .then(res => {
+    .then(function(res){
+      console.log(res)
       food = res.data
       console.log(food)
 
@@ -87,7 +89,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, event => {
           `
         })
     })
-})
+}
 
 document.getElementById('saveCombo').addEventListener('click', event => {
 
