@@ -11,3 +11,6 @@ If you do not like the recipe or random movie presented, you can re-search the i
 You are able to view your saved pairing in the 'MY RESULTS' tab, which will show all of your saved entries via local storage.
 
 The about us page is a description of those involved in creating the project with a short bio about each member and a link to their socials.
+
+<img width="1440" alt="Screen Shot 2021-11-30 at 10 05 12 PM" src="https://user-images.githubusercontent.com/93016157/144180815-ed7b2f82-88bb-4c49-85c9-5bc75bf7c9cf.png">
+
