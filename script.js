@@ -41,7 +41,7 @@ function getData() {
       document.getElementById('foodTitle').innerHTML = `
             <br>
             <h4>${food.results[randomIndex].title}</h4>
-            <p>${food.results[randomIndex].summary}</p>
+            <p style= "font-size: 15px;">${food.results[randomIndex].summary}</p>
           `
 // looping the steps
       for (let i = 0; i < steps.length; i++) {
