@@ -15,7 +15,7 @@ body {
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
 }
 
 /* @media only screen and (max-width: 600px) {
