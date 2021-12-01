@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
 
-  <title>Project GHOAT</title>
+  <title>Date Night</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
       <!-- <div class="row center-align"> -->
       <div class="col">
         <h1 class="center-align">Date Night</h1>
-        <h6 class="center-align" style="font-size: 35px;">A recipe will display based on what you search. Included will
+        <h6 class="center-align" id="titleText">A recipe will display based on what you search. Included will
           be a randomized movie to watch.
         </h6>
       </div>
@@ -49,34 +49,31 @@
 
     <!-- Results Page containers -->
     <section>
-
       <div id="card" class="container hide">
         <div id="smolCard" class="row">
-          <div class="col s4">
-            <div class="card medium">
+          <div class="col s12 m6 l6">
+            <div id="scroll" class="card medium">
               <div id="foodPoster" class="card-image"></div>
               <span id="foodTitle" class="card-title"></span>
               <div class="card-content" id="foodSum">
               </div>
             </div>
           </div>
-          <div class="col s4 center-align combo">
-            <br><br><br><br><br><br><br><br><br><br><br><br>
-            <button id="saveCombo">Save Combo</button>
-          </div>
-          <div id="movieCard" class="col s4">
-            <div class="card medium">
+
+          <div id="movieCard" class="col s12 m6 l6">
+            <div id="scroll" class="card medium">
               <div id="moviePoster" class="card-image">
               </div>
               <span id="movieTitle" class="card-title">
               </span>
               <div id="movieContent" class="card-content">
-              </div>
-              <div class="card-tabs">
-                </ul>
-              </div>
+              </div> 
             </div>
           </div>
+        </div>
+          <div class="col s12 m4 l4 center-align combo">
+          <button id="saveCombo">Save Combo</button>
+          <br><br>
         </div>
       </div>
     </section>
@@ -87,7 +84,7 @@
     <p>
       Created So You Can Have A Perfect Date Night
       <br>
-      © 2021 Copyright by: Garret Broadhead, Harrison Reich, Richard Austin Hall, Oliver Hoang, and Timothy Duran.
+      © 2021 Copyright by: Garrett Broadhead, Harrison Reich, Richard Austin Hall, Oliver Hoang, and Timothy Duran.
     </p>
   </footer>
 

@@ -130,6 +130,10 @@ main {
   padding-top: 30vh;
 }
 
+h6 {
+  text-align: center;
+}
+
 h5 {
   text-align: center;
 }
@@ -146,17 +150,22 @@ h4 {
   font-size: 35px;
 }
 
-#scroll {
-overflow-y: scroll;
+.card {
+  overflow-y: scroll;
 }
 
-h3 {
-  text-align: center;
-}
 @media only screen and (max-width: 600px) {
 
   #titleText {
     font-size: 20px;
   }
 
+  body {
+    font-size: 12px;
+  }
+
+  h6 {
+    text-align: center;
+    font-size: 15px;
+  }
 }
