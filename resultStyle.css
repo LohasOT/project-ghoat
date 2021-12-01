@@ -134,6 +134,10 @@ h6 {
   text-align: center;
 }
 
+h5 {
+  text-align: center;
+}
+
 li {
   padding: 10px;
 }
@@ -144,6 +148,10 @@ h4 {
 
 #titleText {
   font-size: 35px;
+}
+
+.card {
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 600px) {
