@@ -40,7 +40,10 @@ for (let i = 0; i < myStoredFood.length; i++) {
           <img src="${myStoredFood[i].poster}">
         </div>
         <span class="card-title"><h5>${myStoredFood[i].title}</h5></span>
+        <details>
+        <summary>Recipe</summary>
         <ol></ol>
+        </details>
       </div>
     </div> 
     `

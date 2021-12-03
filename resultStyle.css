@@ -153,6 +153,9 @@ h4 {
 .card {
   overflow-y: scroll;
 }
+details {
+  text-align: center;
+}
 
 @media only screen and (max-width: 600px) {
 
