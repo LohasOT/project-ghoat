@@ -22,7 +22,7 @@ function getData() {
     .then(function(res){
 
       food = res.data
-
+console.log(food)
 // making random index for random food
 
       let randomIndex = Math.floor(Math.random() * 10)
@@ -40,16 +40,17 @@ function getData() {
 
       document.getElementById('foodTitle').innerHTML = `
             <br>
-            <h4>${food.results[randomIndex].title}</h4>
-            <p style= "font-size: 15px;">${food.results[randomIndex].summary}</p>
+            <h5>${food.results[randomIndex].title}</h5>
           `
+      document.getElementById('foodSum').innerHTML = `
+      <p style= "font-size: 15px;">${food.results[randomIndex].summary}</p>
+      `
 // looping the steps
       for (let i = 0; i < steps.length; i++) {
         const stepElem = document.createElement('li')
         stepElem.innerHTML = `
         "${steps[i].step}"
         `
-
       }
 // looping the ingredients
       for (let e = 0; e < ingredients.length; e++) {
@@ -57,6 +58,7 @@ function getData() {
         ingredientsElem.innerHTML = `
         "${ingredients[e].original}"
         `
+        document.getElementById('ingredientNeed').append(ingredientsElem)
 // making key values on food to pull from local storage later
       }
       foodObject = {

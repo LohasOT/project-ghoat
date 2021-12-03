@@ -147,12 +147,17 @@ h4 {
 }
 
 #scroll {
-overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 h3 {
   text-align: center;
 }
+
+details {
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
 
   #titleText {
