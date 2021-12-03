@@ -22,7 +22,7 @@ function getData() {
     .then(function(res){
 
       food = res.data
-console.log(food)
+      console.log(food)
 // making random index for random food
 
       let randomIndex = Math.floor(Math.random() * 10)
